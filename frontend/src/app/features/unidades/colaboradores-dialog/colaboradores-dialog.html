@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Colaboradores — {{ data.unidadeNome }}</h2>
+
+<mat-dialog-content>
+  <mat-list>
+    @for (c of data.colaboradores; track c.codigo) {
+      <mat-list-item>
+        <span matListItemTitle>{{ c.nome }}</span>
+        <span matListItemLine>{{ c.codigo }}</span>
+      </mat-list-item>
+    }
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

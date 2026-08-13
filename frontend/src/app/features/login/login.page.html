@@ -1,0 +1,24 @@
+<div class="page-center">
+  <section class="card login-card">
+    <h1>Gestão de Colaboradores e Unidades</h1>
+    <p class="hint">Entre com seu login e senha para acessar o sistema.</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Login</mat-label>
+        <input matInput formControlName="login" autocomplete="username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="senha" autocomplete="current-password" />
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button type="submit" mat-flat-button color="primary" [disabled]="submitting()">
+          {{ submitting() ? 'Entrando...' : 'Entrar' }}
+        </button>
+      </div>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.nav__spacer {
+  flex: 1 1 auto;
+}
+
+.nav__links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav__links .active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.nav__brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+}

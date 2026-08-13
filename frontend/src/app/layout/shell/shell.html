@@ -1,0 +1,21 @@
+<div class="app-shell">
+  <mat-toolbar color="primary" class="nav">
+    <div class="nav__inner">
+      <span class="nav__brand">Gestão de Colaboradores e Unidades</span>
+      <span class="nav__spacer"></span>
+      <div class="nav__links">
+        <a mat-button routerLink="/usuarios" routerLinkActive="active">Usuários</a>
+        <a mat-button routerLink="/unidades" routerLinkActive="active">Unidades</a>
+        <a mat-button routerLink="/colaboradores" routerLinkActive="active">Colaboradores</a>
+        <button mat-button type="button" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          Sair
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <div class="app-shell__content">
+    <router-outlet />
+  </div>
+</div>

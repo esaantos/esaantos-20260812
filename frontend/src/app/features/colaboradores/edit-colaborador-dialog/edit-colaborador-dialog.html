@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Editar colaborador — {{ data.colaborador.codigo }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-dialog-content class="dialog-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Unidade</mat-label>
+      <mat-select formControlName="unidadeId">
+        @for (u of data.unidades; track u.id) {
+          <mat-option [value]="u.id" [disabled]="!isUnidadeSelecionavel(u)">
+            {{ u.codigoUnidade }} — {{ u.nome }} @if (u.status === 'Inativo') { (Inativo) }
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button type="button" mat-button (click)="cancel()">Cancelar</button>
+    <button type="submit" mat-flat-button color="primary">Salvar</button>
+  </mat-dialog-actions>
+</form>
